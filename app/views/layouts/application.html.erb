@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cartapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav id="navigation">
+<div id="brand">
+<a href="#">CartApp</a>
+</div>
+<div id="sign_page">
+<% if user_signed_in? %>
+<span id="welcome">Welcome, <%= link_to current_user.email, edit_user_registration_path %></span>
+<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+<%= link_to "Sign in", new_user_session_path %>
+<%= link_to "Sign up", new_user_registration_path %>
+<% end %>
+</div>
+
+<ul id="pages">
+<li class="<%= 'active' if controller_name='page' && action_name == 'home' %>"><%= link_to "Home", root_path %></li>
+<li class="<%= 'active' if controller_name='products' && action_name == 'index' %>"><%= link_to "Shop", category_products_path(1) %></li>
+<li class="<%= 'active' if controller_name='page' && action_name == 'about' %>"><%= link_to "About", page_about_path %></li>
+<li class="<%= 'active' if controller_name='page' && action_name == 'faqs' %>"><%= link_to "FAQS", page_faqs_path %></li>
+<li class="<%= 'active' if controller_name='page' && action_name == 'contact' %>"><%= link_to "Contact", page_contact_path %></li>
+</ul>
+
+</nav>
+<div class="main">
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+<%= yield %>
+</div>
+
+</body>
+</html>

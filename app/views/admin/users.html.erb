@@ -1,0 +1,8 @@
+<h1>Admin#users</h1>
+<p>Find me in app/views/admin/users.html.erb</p>
+<% @users.each do |user| %>
+	<%= user.email %>
+	<%= link_to 'Edit', edit_user_registration_path %>
+	<br>
+<% end %>
+<%= link_to '' %>

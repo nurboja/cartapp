@@ -1,0 +1,27 @@
+<div class="main_left">
+ <ul>
+ <%@categories.each do |category| %>
+  <li><%= link_to category.name, category_products_path(category) %></li>
+ <% end %>
+ </ul>
+ </div>
+<div class="row">
+<% @category.products.each do |product| %>
+  <div class="product_item">
+    <%= image_tag product.picture_url, class: "product_image" %>
+    <h3><%= product.title %></h3>
+    <p><%= product.description %></p>
+    <a class="add_to_cart" href="#">Add to cart</a>
+  </div>
+<% end %>
+
+</div>
+
+
+
+
+
+
+<br>
+
+

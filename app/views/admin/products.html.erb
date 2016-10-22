@@ -1,0 +1,9 @@
+<h1>Admin#products</h1>
+<p>Find me in app/views/admin/products.html.erb</p>
+<% @products.each do |product|  %>
+	<%= product.title %>
+	<%= product.price %>
+	<%= link_to 'Edit', edit_category_product_path(product.category_id, product.id) %>
+	<br>
+	
+<% end %>
