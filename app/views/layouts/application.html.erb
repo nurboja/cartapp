@@ -24,7 +24,7 @@
 
 <ul id="pages">
 <li class="<%= 'active' if controller_name='page' && action_name == 'home' %>"><%= link_to "Home", root_path %></li>
-<li class="<%= 'active' if controller_name='products' && action_name == 'index' %>"><%= link_to "Shop", category_products_path(1) %></li>
+<li class="<%= 'active' if controller_name='products' && action_name == 'index' %>"><%= link_to "Shop", category_products_path(Category.first) %></li>
 <li class="<%= 'active' if controller_name='page' && action_name == 'about' %>"><%= link_to "About", page_about_path %></li>
 <li class="<%= 'active' if controller_name='page' && action_name == 'faqs' %>"><%= link_to "FAQS", page_faqs_path %></li>
 <li class="<%= 'active' if controller_name='page' && action_name == 'contact' %>"><%= link_to "Contact", page_contact_path %></li>
