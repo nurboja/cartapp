@@ -6,7 +6,7 @@
  </ul>
  </div>
 <div class="row">
-<% @category.products.each do |product| %>
+<% @products.each do |product| %>
   <div class="product_item">
     <%= image_tag product.picture_url, class: "product_image" %>
     <h3><%= product.title %></h3>
@@ -15,7 +15,23 @@
   </div>
 <% end %>
 
+
+<div class="paginate_row">
+<div class="apple_pagination">
+    <div class="page_info">
+      <%= page_entries_info @products %>
+    </div>
+    <%= will_paginate @products, container: false %>
 </div>
+
+</div>
+
+</div>
+
+
+
+
+
 
 
 

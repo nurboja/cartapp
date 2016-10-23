@@ -6,8 +6,10 @@ class ProductsController < ApplicationController
   def index
     unless @category
     @category = Category.find(params[:category_id])
+    @products = @category.products.paginate(page: params[:page], per_page:8)
   else
     @category = Category.last
+    @products = @category.products.paginate(page: params[:page], per_page:8)
   end
     @categories = Category.all
   end
