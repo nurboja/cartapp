@@ -15,8 +15,8 @@ broj = 1
 Category.all.each do |cat|
 rand(3..25).times do |i|
 cat.products.create!(
-			title: "Product #{broj}",
-			description: "Opis proizvoda #{i}",
+			title: Faker::Commerce.product_name,
+			description: Faker::Lorem.sentences(1)[0],
 			picture_url: "image.png",
 			price: 100,
 			category_id: 1

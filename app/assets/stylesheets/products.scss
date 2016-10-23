@@ -5,6 +5,7 @@
 	width: 80%;
 	float:right;
 	position:relative;
+	background-color: #e6e6e1;
 
 }
 
@@ -12,14 +13,17 @@
 
 .product_item {
 	float: left;
-	width: 25%;
+	width: 23.75%;
 	padding: 1%;
 	position:relative;
-	min-height: 200px;	
+	min-height: 250px;
+	border-radius:5px;
+	background-color:white;
+	margin:5px 0% 5px 1%;
 	.add_to_cart {
 		position: absolute;
-		right:25px;
-		bottom:0px;
+		right:23px;
+		bottom:5px;
 		padding:2px;
 		background-color:black;
 		color:white;
@@ -93,7 +97,7 @@
   padding: 1em;
   cursor: default;
   
-  margin:20px auto 0 auto; }
+  margin:0 auto 0 auto; }
   .apple_pagination a, .apple_pagination span {
     padding: 0.2em 0.3em; }
   .apple_pagination .disabled {
@@ -151,7 +155,7 @@
 
    .paginate_row {
    	width:100%;
-   	margin:10px auto;
+   	margin:5px auto;
    	clear:both;
    	float:left;
    }
